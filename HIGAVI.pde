@@ -1,11 +1,3 @@
-import ddf.minim.*;
-import ddf.minim.ugens.*;
-
-Minim minim;
-AudioOutput out;
-Delay myDelay;
-
-float[] octave = {1.0, 2.0, 4.0};
 ArrayList<Ball> balls;
 ArrayList<Rect> rectangle;
 ArrayList stars;
@@ -16,36 +8,9 @@ Particle[] parts = new Particle[NB_PARTICLES];
 PImage image;
 MyColor myColor = new MyColor();
 
-class SineInstrument implements Instrument
-{
-  Oscil wave;
-  Line ampEnv;
-  
-  SineInstrument( float frequency )
-  {
-    wave = new Oscil(frequency, 0, Waves.SINE);
-    ampEnv = new Line();
-    ampEnv.patch(wave.amplitude);
-    myDelay = new Delay(0.1, 0.48, true, true);
-  }
-  
-  void noteOn(float duration)
-  {
-    ampEnv.activate(duration, 0.1f, 0);
-    wave.patch(myDelay).patch(out);
-  }
-  
-  void noteOff()
-  {
-    wave.unpatch(out);
-  }
-}
-
 void setup() {
   size(1280,720);
   noStroke();
-  minim = new Minim(this);
-  out = minim.getLineOut();
   
   // Create an empty ArrayList (will store Ball objects)
   balls = new ArrayList<Ball>();
@@ -137,32 +102,26 @@ void mousePressed() {
       // A new ball object is added to the ArrayList (by default to the end)
       rectangle.add(new Rect(0, 660, 215, 60, 245, 50, 50));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 245, 50, 50));
-      out.playNote(0.0, 2.0, new SineInstrument(311.13 * octave[int(random(0,3))]));
       }
   if(mouseX > 215 && mouseX < 430) {
       rectangle.add(new Rect(215, 660, 215, 60, 255, 127, 80));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 255, 127, 80));
-      out.playNote(0.0, 2.0, new SineInstrument(349.23 * octave[int(random(0,3))]));
       }
   if(mouseX > 430 && mouseX < 645) {
       rectangle.add(new Rect(430, 660, 215, 60, 255, 255, 102));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 255, 255, 102));
-      out.playNote(0.0, 2.0, new SineInstrument(369.99 * octave[int(random(0,3))]));
       }
   if(mouseX > 645 && mouseX < 860) {
       rectangle.add(new Rect(645, 660, 215, 60, 0, 250, 154));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 0, 250, 154));
-      out.playNote(0.0, 2.0, new SineInstrument(415.30 * octave[int(random(0,3))]));
       }
   if(mouseX > 860 && mouseX < 1075) {
       rectangle.add(new Rect(860, 660, 215, 60, 0, 191, 255));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 0, 191, 255));
-      out.playNote(0.0, 2.0, new SineInstrument(466.16 * octave[int(random(0,3))]));
       }
   if(mouseX > 1075) {
       rectangle.add(new Rect(1075, 660, 205, 60, 255, 255, 255));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 255, 255, 255));
-      out.playNote(0.0, 2.0, new SineInstrument(554.37 * octave[int(random(0,3))]));
     }
   }
 
