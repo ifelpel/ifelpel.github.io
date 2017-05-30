@@ -2,7 +2,7 @@ ArrayList<Ball> balls;
 ArrayList<Rect> rectangle;
 ArrayList stars;
 int ballWidth = 36;
-final int NB_PARTICLES = 32;
+final int NB_PARTICLES = 16;
 ArrayList<Triangle> triangles;
 Particle[] parts = new Particle[NB_PARTICLES];
 PImage image;
