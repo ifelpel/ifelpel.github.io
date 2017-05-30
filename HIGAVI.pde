@@ -1,3 +1,13 @@
+interface JavaScript {
+  void playSound0();
+  void playSound1();
+}
+
+void bindJavascript(JavaScript js) {
+  javascript = js;
+}
+JavaScript javascript;
+
 ArrayList<Ball> balls;
 ArrayList<Rect> rectangle;
 ArrayList stars;
@@ -99,11 +109,17 @@ void draw() {
 
 void mousePressed() {
   if(mouseX < 215) {
+  if(javascript != null) {
+      javascript.playSound0();
+    }
       // A new ball object is added to the ArrayList (by default to the end)
       rectangle.add(new Rect(0, 660, 215, 60, 245, 50, 50));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 245, 50, 50));
       }
   if(mouseX > 215 && mouseX < 430) {
+  if(javascript != null) {
+      javascript.playSound1();
+    }
       rectangle.add(new Rect(215, 660, 215, 60, 255, 127, 80));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 255, 127, 80));
       }
