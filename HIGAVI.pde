@@ -9,7 +9,7 @@ PImage image;
 MyColor myColor = new MyColor();
 
 void setup() {
-  size(1280,720,P2D);
+  size(1280,720);
   frameRate(30);
   noStroke();
   
