@@ -9,7 +9,7 @@ PImage image;
 MyColor myColor = new MyColor();
 
 void setup() {
-  size(screen.width,screen.height);
+  size(559,375);
   frameRate(30);
   noStroke();
   
@@ -268,7 +268,7 @@ class Particle
   
   Particle()
   {
-    pos = new PVector (random(screen.width), random(screen.height));
+    pos = new PVector (random(width), random(height));
   }
 
   public void move()
