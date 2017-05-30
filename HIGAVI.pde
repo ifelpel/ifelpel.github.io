@@ -98,35 +98,33 @@ void draw() {
   drawTriangles();
 }
 
-void keyPressed() {
-  if(keyPressed) {
-    if (key == 'a' || key == 'A') {
+void mousePressed() {
+  if(mouseX < 215) {
       // A new ball object is added to the ArrayList (by default to the end)
       rectangle.add(new Rect(0, 660, 215, 60, 245, 50, 50));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 245, 50, 50));
       }
-    if(key == 's' || key == 'S') {
+  if(mouseX > 215 && mouseX < 430) {
       rectangle.add(new Rect(215, 660, 215, 60, 255, 127, 80));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 255, 127, 80));
       }
-    if(key == 'd' || key == 'D') {
+  if(mouseX > 430 && mouseX < 645) {
       rectangle.add(new Rect(430, 660, 215, 60, 255, 255, 102));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 255, 255, 102));
       }
-    if(key == 'f' || key == 'F') {
+  if(mouseX > 645 && mouseX < 860) {
       rectangle.add(new Rect(645, 660, 215, 60, 0, 250, 154));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 0, 250, 154));
       }
-    if(key == 'j' || key == 'J') {
+  if(mouseX > 860 && mouseX < 1075) {
       rectangle.add(new Rect(860, 660, 215, 60, 0, 191, 255));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 0, 191, 255));
       }
-    if(key == 'k' || key == 'K') {
+  if(mouseX > 1075) {
       rectangle.add(new Rect(1075, 660, 205, 60, 255, 255, 255));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 255, 255, 255));
     }
   }
-}
 
 void drawTriangles()
 {
