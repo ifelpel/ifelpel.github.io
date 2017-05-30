@@ -9,8 +9,7 @@ PImage image;
 MyColor myColor = new MyColor();
 
 void settings() {
-  size(640,480, P3D);
-  PJOGL.profile=1;
+  size(640,480);
 }
 
 void setup() {
@@ -388,5 +387,24 @@ class star {
     
     fill(light);
     ellipse(xPos, yPos, starSize, starSize);
+  }
+}
+
+class Triangle
+{
+  PVector A, B, C; 
+
+  Triangle(PVector p1, PVector p2, PVector p3)
+  {
+    A = p1;
+    B = p2;
+    C = p3;
+  }
+  
+  public void display()
+  {
+    vertex(A.x, A.y);
+    vertex(B.x, B.y);
+    vertex(C.x, C.y);
   }
 }
