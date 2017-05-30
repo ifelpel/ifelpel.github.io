@@ -8,14 +8,6 @@ Particle[] parts = new Particle[NB_PARTICLES];
 PImage image;
 MyColor myColor = new MyColor();
 
-import oscP5.*;
-import netP5.*;
-import codeanticode.syphon.*;
-
-SyphonServer server;
-OscP5 oscP5;
-NetAddress myRemoteLocation, myRemoteLocation2;
-
 void settings() {
   size(1280,720, P3D);
   PJOGL.profile=1;
@@ -39,12 +31,6 @@ void setup() {
   for(int i = 1; i <= 300; i++){
     stars.add(new star());
   }
-  
-  oscP5 = new OscP5(this,12000);
-  myRemoteLocation = new NetAddress("127.0.0.1",12000);
-  myRemoteLocation2 = new NetAddress("127.0.0.1",13000);
-  
-  server = new SyphonServer(this,"Processing Syphon");
 }
 
 void draw() {
@@ -114,8 +100,6 @@ void draw() {
     }
   }
   drawTriangles();
-      
-  server.sendScreen();
 }
 
 void oscEvent(OscMessage theOscMessage) {
