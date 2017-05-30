@@ -7,6 +7,25 @@
    <script type="text/javascript">
     var s0 = new buzz.sound("s0", {formats: [ "ogg", "mp3", "aac" ]});
     var s1 = new buzz.sound("s1", {formats: [ "ogg", "mp3", "aac" ]});
+    
+    var bound = false;
+      function bindJavascript() {
+        var pjs = Processing.getInstanceById("@@id@@");
+        if(pjs != null) {
+          pjs.bindJavascript(this);
+          bound = true;
+        }
+        if(!bound) setTimeout(bindJavascript, 250);
+      }
+      bindJavascript();
+      function playSound0() {
+        s0.load();
+        s0.play();
+      }
+      function playSound1() {
+        s1.load();
+        s1.play();
+      }
   </script>
  </head>
  <body>
