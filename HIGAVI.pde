@@ -8,11 +8,8 @@ Particle[] parts = new Particle[NB_PARTICLES];
 PImage image;
 MyColor myColor = new MyColor();
 
-void settings() {
-  size(1280,720,P2D);
-}
-
 void setup() {
+  size(1280,720,P2D);
   frameRate(30);
   noStroke();
   
