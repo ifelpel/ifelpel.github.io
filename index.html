@@ -8,12 +8,21 @@
  <body>
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
   <script type="text/javascript">
-	  
-    var synth = new Tone.PolySynth(6, Tone.Synth, {
-	    "oscillator" : {
-				type : "sine"
-    			}
-    }).toMaster();
+    var synthA = new Tone.Synth({
+	oscillator : {
+  	type : 'fmsquare',
+    modulationType : 'sawtooth',
+    modulationIndex : 3,
+    harmonicity: 3.4
+  },
+  envelope : {
+  	attack : 0.001,
+    decay : 0.1,
+    sustain: 0.1,
+    release: 0.1
+  }
+}).toMaster()
+    var synth = new Tone.PolySynth(6, synthA).toMaster();
 	  
     var bound = false;
       function bindJavascript() {
