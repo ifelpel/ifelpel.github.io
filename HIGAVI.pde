@@ -5,6 +5,10 @@ interface JavaScript {
   void playSound3();
   void playSound4();
   void playSound5();
+  void playSound6();
+  void playSound7();
+  void playSound8();
+  void playSound9();
 }
 
 void bindJavascript(JavaScript js) {
@@ -225,15 +229,27 @@ class Ball {
   // Test to see if the shape exceeds the boundaries of the screen
   // If it does, reverse its direction by multiplying by -1
   if (x > width - w) {
+  if(javascript != null) {
+      javascript.playSound6();
+    }
     xdirection *= -1;
   }
   if (x < w) {
+  if(javascript != null) {
+      javascript.playSound7();
+    }
     xdirection *= -1;
   }
   if (y > 660 - w) {
+  if(javascript != null) {
+      javascript.playSound8();
+    }
     ydirection *= -1;
   }
   if (y < w) {
+  if(javascript != null) {
+      javascript.playSound9();
+    }
     ydirection *= -1;
   }
       
