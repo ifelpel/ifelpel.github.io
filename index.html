@@ -23,6 +23,20 @@
   }
     }).connect(freeverb);
 	  
+    var synthB = new Tone.PolySynth(6, Tone.Synth, {
+    oscillator : {
+  	type : 'pwm',
+	modulationFrequency.value = 0.5,
+  },
+    portamento : 0,
+  envelope : {
+  	attack : 0.05,
+    decay : 0.1,
+    sustain: 0.1,
+    release: 2.5
+  }
+    }).connect(freeverb);
+	  
     var bound = false;
       function bindJavascript() {
         var pjs = Processing.getInstanceById("@@id@@");
@@ -62,6 +76,26 @@
         var octave6 = ['C#5', 'C#6', 'C#7'];
 	var note6 = octave6[Math.floor(Math.random() * octave6.length)];
 	synthA.triggerAttackRelease(note6, 0.7);
+      }
+      function playSound6() {
+        var octave7 = ['D#4', 'D#5', 'D#6', 'F#4', 'F#5', 'F#6'];
+	var note7 = octave7[Math.floor(Math.random() * octave7.length)];
+	synthB.triggerAttackRelease(note7, 0.7);
+      }
+      function playSound7() {
+        var octave8 = ['F4', 'F5', 'F6', 'G#4', 'G#5', 'G#6'];
+	var note8 = octave8[Math.floor(Math.random() * octave8.length)];
+	synthB.triggerAttackRelease(note8, 0.7);
+      }
+      function playSound8() {
+        var octave9 = ['A#4', 'A#5', 'A#6', 'C#5', 'C#6', 'C#7'];
+	var note9 = octave9[Math.floor(Math.random() * octave9.length)];
+	synthB.triggerAttackRelease(note9, 0.7);
+      }
+      function playSound9() {
+        var octave10 = ['C5', 'C6', 'C7', 'D#5', 'D#6', 'D#7'];
+	var note10 = octave10[Math.floor(Math.random() * octave10.length)];
+	synthB.triggerAttackRelease(note10, 0.7);
       }
   </script>
  </body>
