@@ -12,13 +12,7 @@
     var synth = new Tone.PolySynth(6, Tone.Synth, {
 	    "oscillator" : {
 				type : "sine",
-			}
-	    "envelope" : {
-	    			"attack": 0.1,
-				"decay": 0.5,
-				"sustain": 0.0,
-				"release": 0.8
-    }
+    			}
     }).toMaster();
 	  
     var bound = false;
