@@ -5,18 +5,6 @@ interface JavaScript {
   void playSound3();
   void playSound4();
   void playSound5();
-  void playSound6();
-  void playSound7();
-  void playSound8();
-  void playSound9();
-  void playSound10();
-  void playSound11();
-  void playSound12();
-  void playSound13();
-  void playSound14();
-  void playSound15();
-  void playSound16();
-  void playSound17();
 }
 
 void bindJavascript(JavaScript js) {
@@ -36,6 +24,7 @@ MyColor myColor = new MyColor();
 
 void setup() {
   size(1280,720);
+  frameRate(15);
   noStroke();
   
   // Create an empty ArrayList (will store Ball objects)
