@@ -14,12 +14,12 @@
     freeverb.wet.value = 0.1;
 	  
     var synth = new Tone.PolySynth(32, Tone.Synth).connect(freeverb);
-	  synth.set({
+	  poly.set({
 		  "oscillator" : {
 			  "type" = "sine"
 		  }
 		"envelope" : {
-		"attack" : 0.1;
+		"attack" : 0.5;
 		"release" : 5;
 		}
 		});
