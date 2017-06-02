@@ -7,20 +7,18 @@
  </head>
  <body>
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
-  <script type="text/javascript">   
-    
-   //a polysynth composed of 6 Voices of Synth
+  <script type="text/javascript">
 	  
-    var synth = new Tone.PolySynth(32, Tone.Synth(
-	    	"oscillator":{
-	    	"type":"sine";
-			}
-		"envelope":{
-		"attack":0.005;
-		"decay":0.1;
-		"sustain":0.3;
-		"release":1;
-})).connect(freeverb);
+    var synth = new Tone.PolySynth(32, Tone.Synth).connect(freeverb);
+	  poly.set({
+	"oscillator" : {
+		"type" : "sine"
+	},
+	"envelope" : {
+		"attack" : 0.25
+		"release" : 1
+	}
+});
 	  var freeverb = new Tone.Freeverb(0.9, 4000).toMaster();
     freeverb.wet.value = 0.1;
 	  
