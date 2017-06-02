@@ -13,16 +13,16 @@
     var freeverb = new Tone.Freeverb(0.9, 4000).toMaster();
     freeverb.wet.value = 0.1;
 	  
-    var synth = new Tone.PolySynth(32, Tone.Synth).connect(freeverb);
-	  poly.set({
-		  "oscillator" : {
-			  "type" = "sine"
-		  }
-		"envelope" : {
-		"attack" : 0.5;
-		"release" : 5;
-		}
-		});
+    var synth = new Tone.PolySynth(32, Tone.Synth(
+	    	oscillator:{
+	    	type:"sine"
+			}
+		envelope:{
+		attack:0.005
+		decay:0.1
+		sustain:0.3
+		release:1
+})).connect(freeverb);
 	  
     var bound = false;
       function bindJavascript() {
