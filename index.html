@@ -7,10 +7,7 @@
  </head>
  <body>
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
-  <script type="text/javascript">    
-	  
-    var PickFirstOctave = ["D#4", "D#5", "D#6"];
-    var Note1 = PickFirstOctave[Math.floor(Math.random() * 3)];
+  <script type="text/javascript">   
     
    //a polysynth composed of 6 Voices of Synth
     var freeverb = new Tone.Freeverb(0.9, 4000).toMaster();
@@ -33,10 +30,12 @@
       }
       bindJavascript();
       function playSound0() {
-	synth.triggerAttackRelease("Note1", 0.1);
+	var octave1 = ["D#4", "D#5", "D#6"];
+    	var Note1 = PickFirstOctave[Math.floor(Math.random() * 3)];
+	synth.triggerAttackRelease(Note1, 0.1);
       }
       function playSound1() {
-        var octave2 = ["F4", 'F5', 'F6'];
+        var octave2 = ['F4', 'F5', 'F6'];
 	var note2 = octave2[Math.floor(Math.random() * octave2.length)];
 	synth.triggerAttackRelease(note2, 0.1);
       }
