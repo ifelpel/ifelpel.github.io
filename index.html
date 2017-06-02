@@ -10,16 +10,13 @@
   <script type="text/javascript">
     var synth = new Tone.PolySynth(6, Tone.Synth, {
     oscillator : {
-  	type : 'fmsquare',
-    modulationType : 'sawtooth',
-    modulationIndex : 3,
-    harmonicity: 3.4
+  	type : 'sine',
   },
   envelope : {
-  	attack : 0.001,
+  	attack : 0.3,
     decay : 0.1,
     sustain: 0.1,
-    release: 0.1
+    release: 3
   }
     }).toMaster();
 	  
