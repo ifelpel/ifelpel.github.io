@@ -8,17 +8,19 @@
  <body>
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
   <script type="text/javascript">
+    var freeverb = new Tone.Freeverb(0.95).toMaster();
+    freeverb.wet.value = 0.2;
     var synth = new Tone.PolySynth(6, Tone.Synth, {
     oscillator : {
   	type : 'sine',
   },
   envelope : {
-  	attack : 0.3,
+  	attack : 0.05,
     decay : 0.1,
     sustain: 0.1,
-    release: 3
+    release: 5
   }
-    }).toMaster();
+    }).connect(freeverb);
 	  
     var bound = false;
       function bindJavascript() {
