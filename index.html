@@ -8,9 +8,9 @@
  <body>
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
   <script type="text/javascript">
-    var freeverb = new Tone.Freeverb(0.93).toMaster();
-    freeverb.wet.value = 0.2;
-    var synthA = new Tone.PolySynth(6, Tone.Synth, {
+    var freeverb = new Tone.Freeverb(0.99).toMaster();
+    freeverb.wet.value = 0.4;
+    var synthA = new Tone.PolySynth(64, Tone.Synth, {
     oscillator : {
   	type : 'sine',
   },
@@ -23,7 +23,7 @@
   }
     }).connect(freeverb);
 	  
-    var synthB = new Tone.PolySynth(24, Tone.Synth, {
+    var synthB = new Tone.PolySynth(64, Tone.Synth, {
     oscillator : {
   	type : 'pwm',
 	modulationFrequency : 0.8,
