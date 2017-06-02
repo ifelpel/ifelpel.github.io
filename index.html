@@ -8,6 +8,12 @@
  <body>
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
   <script type="text/javascript">
+    var note1 = new Tone.CtrlPattern (['D#4, D#5, D#6'], "random");
+    var note2 = new Tone.CtrlPattern (['F4, F5, F6'], "random");
+    var note3 = new Tone.CtrlPattern (['F#4, F#5, F#6'], "random");
+    var note4 = new Tone.CtrlPattern (['G#4, G#5, G#6'], "random");
+    var note5 = new Tone.CtrlPattern (['A#4, A#5, A#6'], "random");
+    var note6 = new Tone.CtrlPattern (['C#5, C#6, C#7'], "random");
    //a polysynth composed of 6 Voices of Synth
     var freeverb = new Tone.Freeverb(0.9, 4000).toMaster();
     freeverb.wet.value = 0.1;
@@ -16,13 +22,6 @@
 				"type" : "sine",
 			}
 		}).connect(freeverb);
-	  
-    var note1 = new Tone.CtrlPattern (['D#4, D#5, D#6'], "random");
-    var note2 = new Tone.CtrlPattern (['F4, F5, F6'], "random");
-    var note3 = new Tone.CtrlPattern (['F#4, F#5, F#6'], "random");
-    var note4 = new Tone.CtrlPattern (['G#4, G#5, G#6'], "random");
-    var note5 = new Tone.CtrlPattern (['A#4, A#5, A#6'], "random");
-    var note6 = new Tone.CtrlPattern (['C#5, C#6, C#7'], "random");
 	  
     var bound = false;
       function bindJavascript() {
