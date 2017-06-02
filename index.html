@@ -17,6 +17,13 @@
 			}
 		}).connect(freeverb);
     
+    var octave1 = ['synth.triggerAttackRelease("D#4", 0.1)', 'synth.triggerAttackRelease("D#5", 0.1)', 'synth.triggerAttackRelease("D#6", 0.5)'];
+    var octave2 = ['synth.triggerAttackRelease("F4", 0.1)', 'synth.triggerAttackRelease("F5", 0.1)', 'synth.triggerAttackRelease("F6", 0.5)'];
+    var octave3 = ['synth.triggerAttackRelease("F#4", 0.1)', 'synth.triggerAttackRelease("F#5", 0.1)', 'synth.triggerAttackRelease("F#6", 0.5)'];
+    var octave4 = ['synth.triggerAttackRelease("G#4", 0.1)', 'synth.triggerAttackRelease("G#5", 0.1)', 'synth.triggerAttackRelease("G#6", 0.5)'];
+    var octave5 = ['synth.triggerAttackRelease("A#4", 0.1)', 'synth.triggerAttackRelease("A#5", 0.1)', 'synth.triggerAttackRelease("A#6", 0.5)'];
+    var octave6 = ['synth.triggerAttackRelease("C#5", 0.1)', 'synth.triggerAttackRelease("C#6", 0.1)', 'synth.triggerAttackRelease("C#7", 0.5)'];
+	  
     var bound = false;
       function bindJavascript() {
         var pjs = Processing.getInstanceById("@@id@@");
@@ -28,58 +35,34 @@
       }
       bindJavascript();
       function playSound0() {
-        synth.triggerAttackRelease("D#4", 0.1);
+        var pickFirstOctave = function () {
+        var SelectedFirstOctave = octave1[Math.floor(Math.random() * 6)];
+        return SelectedFirstOctave;
       }
       function playSound1() {
-        synth.triggerAttackRelease("F4", 0.1);
+        var pickSecondOctave = function () {
+        var SelectedSecondOctave = octave2[Math.floor(Math.random() * 6)];
+        return SelectedSecondOctave;
       }
       function playSound2() {
-        synth.triggerAttackRelease("F#4", 0.1);
+        var pickThirdOctave = function () {
+        var SelectedThirdOctave = octave3[Math.floor(Math.random() * 6)];
+        return SelectedThirdOctave;
       }
       function playSound3() {
-        synth.triggerAttackRelease("G#4", 0.1);
+        var pickFourthOctave = function () {
+        var SelectedFourthOctave = octave4[Math.floor(Math.random() * 6)];
+        return SelectedFourthOctave;
       }
       function playSound4() {
-        synth.triggerAttackRelease("A#4", 0.1);
+        var pickFifthOctave = function () {
+        var SelectedFifthOctave = octave5[Math.floor(Math.random() * 6)];
+        return SelectedFifthOctave;
       }
       function playSound5() {
-        synth.triggerAttackRelease("C#5", 0.1);
-      }
-      function playSound6() {
-        synth.triggerAttackRelease("D#5", 0.1);
-      }
-      function playSound7() {
-        synth.triggerAttackRelease("F5", 0.5);
-      }
-      function playSound8() {
-        synth.triggerAttackRelease("F#5", 0.5);
-      }
-      function playSound9() {
-        synth.triggerAttackRelease("G5", 0.5);
-      }
-      function playSound10() {
-        synth.triggerAttackRelease("A5", 0.5);
-      }
-      function playSound11() {
-        synth.triggerAttackRelease("C#6", 0.5);
-      }
-      function playSound12() {
-        synth.triggerAttackRelease("D#6", 0.5);
-      }
-      function playSound13() {
-        synth.triggerAttackRelease("F6", 0.5);
-      }
-      function playSound14() {
-        synth.triggerAttackRelease("F#6", 0.5);
-      }
-      function playSound15() {
-        synth.triggerAttackRelease("G6", 0.5);
-      }
-      function playSound16() {
-        synth.triggerAttackRelease("A6", 0.5);
-      }
-      function playSound17() {
-        synth.triggerAttackRelease("C#7", 0.5);
+        var pickSixthOctave = function () {
+        var SelectedSixthOctave = octave6[Math.floor(Math.random() * 6)];
+        return SelectedSixthOctave;
       }
   </script>
  </body>
