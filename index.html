@@ -10,10 +10,8 @@
   <script type="text/javascript">    
 	  
     var PickFirstOctave = ["D#4", "D#5", "D#6"];
-    var SelectFirstNote = function() {
-    var = Note1 = PickFirstOctave[Math.floor(Math.random() * 3)];
-    return Note1;
-    };
+    var Note1 = PickFirstOctave[Math.floor(Math.random() * 3)];
+    
    //a polysynth composed of 6 Voices of Synth
     var freeverb = new Tone.Freeverb(0.9, 4000).toMaster();
     freeverb.wet.value = 0.1;
@@ -35,7 +33,7 @@
       }
       bindJavascript();
       function playSound0() {
-	synth.triggerAttackRelease(SelectFirstNote();, 0.1);
+	synth.triggerAttackRelease("Note1", 0.1);
       }
       function playSound1() {
         var octave2 = ["F4", 'F5', 'F6'];
