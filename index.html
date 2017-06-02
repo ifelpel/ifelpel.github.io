@@ -16,8 +16,9 @@
 				"type" : "sine",
 			}
 		}).connect(freeverb);
-    
-    var octave1 = ['synth.triggerAttackRelease("D#4", 0.1);', 'synth.triggerAttackRelease("D#5", 0.1);', 'synth.triggerAttackRelease("D#6", 0.5);'];
+    new Tone
+	  
+    var note1 = new Tone.CtrlPattern (['D#4, D#5, D#6'], "random");
     var octave2 = ['synth.triggerAttackRelease("F4", 0.1);', 'synth.triggerAttackRelease("F5", 0.1);', 'synth.triggerAttackRelease("F6", 0.5);'];
     var octave3 = ['synth.triggerAttackRelease("F#4", 0.1);', 'synth.triggerAttackRelease("F#5", 0.1);', 'synth.triggerAttackRelease("F#6", 0.5);'];
     var octave4 = ['synth.triggerAttackRelease("G#4", 0.1);', 'synth.triggerAttackRelease("G#5", 0.1);', 'synth.triggerAttackRelease("G#6", 0.5);'];
@@ -35,7 +36,7 @@
       }
       bindJavascript();
       function playSound0() {
-        return octave1[Math.floor(Math.random() * octave1.length)];
+	synth.triggerAttackRelease(note1, 0.1);
       }
       function playSound1() {
         return octave2[Math.floor(Math.random() * octave2.length)];
