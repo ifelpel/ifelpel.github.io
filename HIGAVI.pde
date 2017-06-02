@@ -1,6 +1,10 @@
 interface JavaScript {
   void playSound0();
   void playSound1();
+  void playSound2();
+  void playSound3();
+  void playSound4();
+  void playSound5();
 }
 
 void bindJavascript(JavaScript js) {
@@ -124,18 +128,30 @@ void mousePressed() {
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 255, 127, 80));
       }
   if(mouseX > 430 && mouseX < 645) {
+  if(javascript != null) {
+      javascript.playSound2();
+    }
       rectangle.add(new Rect(430, 660, 215, 60, 255, 255, 102));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 255, 255, 102));
       }
   if(mouseX > 645 && mouseX < 860) {
+  if(javascript != null) {
+      javascript.playSound3();
+    }
       rectangle.add(new Rect(645, 660, 215, 60, 0, 250, 154));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 0, 250, 154));
       }
   if(mouseX > 860 && mouseX < 1075) {
+  if(javascript != null) {
+      javascript.playSound4();
+    }
       rectangle.add(new Rect(860, 660, 215, 60, 0, 191, 255));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 0, 191, 255));
       }
   if(mouseX > 1075) {
+  if(javascript != null) {
+      javascript.playSound5();
+    }
       rectangle.add(new Rect(1075, 660, 205, 60, 255, 255, 255));
       balls.add(new Ball(random(100,1000), random(50,600), ballWidth, 255, 255, 255));
     }
