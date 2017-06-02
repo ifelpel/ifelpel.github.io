@@ -11,7 +11,7 @@
    //a polysynth composed of 6 Voices of Synth
     var freeverb = new Tone.Freeverb().toMaster();
     freeverb.roomSize.value = 0.9;
-    freeverb.wet.value = 0.2;
+    freeverb.wet.value = 0.9;
     var synth = new Tone.PolySynth(64, Tone.Synth, {
 			oscillator : {
 				"type" : "sine",
