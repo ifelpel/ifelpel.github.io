@@ -9,11 +9,14 @@
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
   <script type="text/javascript">
    //a polysynth composed of 6 Voices of Synth
+    var freeverb = new Tone.Freeverb().toMaster();
+    freeverb.roomSize.value = 0.8;
+    freeverb.wet.value = 0.7;
     var synth = new Tone.PolySynth(64, Tone.Synth, {
 			oscillator : {
 				"type" : "sine",
 			}
-		}).toMaster();
+		}).connect(freeverb);
     
     var bound = false;
       function bindJavascript() {
