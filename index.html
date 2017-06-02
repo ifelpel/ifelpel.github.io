@@ -5,8 +5,8 @@
    <script src="processing (1).js"></script>
    <script src="Tone.js" type="text/javascript"></script>
    <script type="text/javascript">
-   //create a synth and connect it to the master output (your speakers)
-   var synth = new Tone.Synth().toMaster();
+   //a polysynth composed of 6 Voices of Synth
+    var synth = new Tone.PolySynth(64, Tone.Synth).toMaster();
     
     var bound = false;
       function bindJavascript() {
