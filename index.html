@@ -9,7 +9,11 @@
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
   <script type="text/javascript">
 	  
-    var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
+    var synth = new Tone.PolySynth(6, Tone.Synth, {
+			"oscillator" : {
+				"partials" : [0, 2, 3, 4],
+			}
+		}).toMaster();
 	  
     var bound = false;
       function bindJavascript() {
