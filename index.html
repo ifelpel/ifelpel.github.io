@@ -8,8 +8,8 @@
  <body>
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
   <script type="text/javascript">
-    var filter = new Tone.Filter(750, "lowpass").toMaster();
-    var freeverb = new Tone.Freeverb(0.99).toMaster();
+    var filter = new Tone.Filter(750, "lowpass");
+    var freeverb = new Tone.Freeverb(0.99);
     freeverb.wet.value = 0.4;
     var synthA = new Tone.PolySynth(64, Tone.Synth, {
     oscillator : {
@@ -22,7 +22,7 @@
     sustain: 0.1,
     release: 2.5
   }
-    }).connect(freeverb);
+    }).chain(freeverb, Tone.Master);
 	  
     var synthB = new Tone.PolySynth(64, Tone.Synth, {
     oscillator : {
@@ -36,7 +36,7 @@
     sustain: 0.1,
     release: 4
   }
-    }).connect(filter, freeverb);
+    }).chain(filter, freeverb, Tone.Master);
 	  
     var bound = false;
       function bindJavascript() {
