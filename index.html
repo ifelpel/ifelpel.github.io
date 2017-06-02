@@ -8,7 +8,7 @@
  <body>
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
   <script type="text/javascript">
-    var filter = new Tone.Filter(750, "lowpass").connect(freeverb);
+    var filter = new Tone.Filter(750, "lowpass").toFreeverb();
     var freeverb = new Tone.Freeverb(0.99).toMaster();
     freeverb.wet.value = 0.4;
     var synthA = new Tone.PolySynth(64, Tone.Synth, {
