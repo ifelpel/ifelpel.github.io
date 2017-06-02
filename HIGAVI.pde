@@ -28,7 +28,7 @@ MyColor myColor = new MyColor();
 
 void setup() {
   size(1280,720);
-  frameRate(15);
+  frameRate(24);
   noStroke();
   
   // Create an empty ArrayList (will store Ball objects)
