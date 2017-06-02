@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title>Hello Web - Processing.js Test</title>
+  <title>HIGAVI - Click Anywhere on Screen</title>
    <script src="processing (1).js"></script>
    <script src="Tone.js" type="text/javascript"></script>
  </head>
@@ -17,6 +17,12 @@
 			oscillator : {
 				"type" : "sine",
 			}
+	    		envelope : {
+  				"attack" : 0.001,
+    				"decay" : 0.1,
+    				"sustain": 0.1,
+    				"release": 0.1,
+ 			}
 		}).connect(freeverb);
 	  
     var bound = false;
