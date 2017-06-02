@@ -9,18 +9,7 @@
     <canvas id="@@id@@" data-processing-sources="HIGAVI.pde" width="1280" height="720"></canvas>
   <script type="text/javascript">
 	  
-    var synth = new Tone.PolySynth(32, Tone.Synth).connect(freeverb);
-	  poly.set({
-	"oscillator" : {
-		"type" : "sine"
-	},
-	"envelope" : {
-		"attack" : 0.25
-		"release" : 1
-	}
-});
-	  var freeverb = new Tone.Freeverb(0.9, 4000).toMaster();
-    freeverb.wet.value = 0.1;
+    var synth = new Tone.PolySynth(6, Tone.Synth).toMaster();
 	  
     var bound = false;
       function bindJavascript() {
@@ -30,7 +19,7 @@
           bound = true;
         }
         if(!bound) setTimeout(bindJavascript, 250);
-      }
+      }  
       bindJavascript();
       function playSound0() {
 	var octave1 = ['D#4', 'D#5', 'D#6'];
