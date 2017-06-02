@@ -19,11 +19,11 @@
     new Tone
 	  
     var note1 = new Tone.CtrlPattern (['D#4, D#5, D#6'], "random");
-    var octave2 = ['synth.triggerAttackRelease("F4", 0.1);', 'synth.triggerAttackRelease("F5", 0.1);', 'synth.triggerAttackRelease("F6", 0.5);'];
-    var octave3 = ['synth.triggerAttackRelease("F#4", 0.1);', 'synth.triggerAttackRelease("F#5", 0.1);', 'synth.triggerAttackRelease("F#6", 0.5);'];
-    var octave4 = ['synth.triggerAttackRelease("G#4", 0.1);', 'synth.triggerAttackRelease("G#5", 0.1);', 'synth.triggerAttackRelease("G#6", 0.5);'];
-    var octave5 = ['synth.triggerAttackRelease("A#4", 0.1);', 'synth.triggerAttackRelease("A#5", 0.1);', 'synth.triggerAttackRelease("A#6", 0.5);'];
-    var octave6 = ['synth.triggerAttackRelease("C#5", 0.1);', 'synth.triggerAttackRelease("C#6", 0.1);', 'synth.triggerAttackRelease("C#7", 0.5);'];
+    var note2 = new Tone.CtrlPattern (['F4, F5, F6'], "random");
+    var note3 = new Tone.CtrlPattern (['F#4, F#5, F#6'], "random");
+    var note4 = new Tone.CtrlPattern (['G#4, G#5, G#6'], "random");
+    var note5 = new Tone.CtrlPattern (['A#4, A#5, A#6'], "random");
+    var note6 = new Tone.CtrlPattern (['C#5, C#6, C#7'], "random");
 	  
     var bound = false;
       function bindJavascript() {
@@ -39,19 +39,19 @@
 	synth.triggerAttackRelease(note1, 0.1);
       }
       function playSound1() {
-        return octave2[Math.floor(Math.random() * octave2.length)];
+        synth.triggerAttackRelease(note2, 0.1);
       }
       function playSound2() {
-        return octave3[Math.floor(Math.random() * octave3.length)];
+        synth.triggerAttackRelease(note3, 0.1);
       }
       function playSound3() {
-        return octave4[Math.floor(Math.random() * octave4.length)];
+        synth.triggerAttackRelease(note4, 0.1);
       }
       function playSound4() {
-        return octave5[Math.floor(Math.random() * octave5.length)];
+        synth.triggerAttackRelease(note5, 0.1);
       }
       function playSound5() {
-        return = octave6[Math.floor(Math.random() * octave6.length)];
+        synth.triggerAttackRelease(note6, 0.1);
       }
   </script>
  </body>
